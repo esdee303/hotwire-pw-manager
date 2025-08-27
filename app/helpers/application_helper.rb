@@ -18,4 +18,8 @@ module ApplicationHelper
     time.localtime
     time.strftime("%d/%m/%Y, %H:%M")
   end
+
+  def render_flash_stream
+    turbo_stream.update("flash", partial: "shared/flash")
+  end
 end
