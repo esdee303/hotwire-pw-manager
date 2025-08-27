@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'secure'
-  
-  get '/home', to: 'pages#home'
-  get '/about', to: 'pages#about'
+  devise_for :users, path: "secure"
+
+  get "/home", to: "pages#home"
+  get "/about", to: "pages#about"
 
   resources :entries
-  
+
   # Defines the root path route ("/")
-  root "pages#home"
+  root "entries#index"
 end
