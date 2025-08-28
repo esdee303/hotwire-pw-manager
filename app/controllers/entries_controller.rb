@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_entry, only: %i[show destroy]
+  before_action :set_entry, only: %i[show edit destroy]
 
   def index
     @entries = current_user.entries
@@ -25,6 +25,10 @@ class EntriesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+
   end
 
   def destroy
